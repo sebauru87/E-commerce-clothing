@@ -11,32 +11,32 @@ class Directory extends React.Component {
             sections: [
                     {
                       title: 'hats',
-                      imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
+                      imageUrl: 'https://images.unsplash.com/photo-1452547813764-66d7616f3f2e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3900&q=80',
                       id: 1,
                       linkUrl: 'shop/hats'
                     },
                     {
                       title: 'jackets',
-                      imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
+                      imageUrl: 'https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3900&q=80',
                       id: 2,
                       linkUrl: 'shop/jackets'
                     },
                     {
                       title: 'sneakers',
-                      imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
+                      imageUrl: 'https://images.unsplash.com/photo-1515762909411-f9aea3cb6969?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3900&q=80',
                       id: 3,
                       linkUrl: 'shop/sneakers'
                     },
                     {
                       title: 'womens',
-                      imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
+                      imageUrl: 'https://images.unsplash.com/photo-1562373353-7db88744f982?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3896&q=80',
                       size: 'large',
                       id: 4,
                       linkUrl: 'shop/womens'
                     },
                     {
                       title: 'mens',
-                      imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
+                      imageUrl: 'https://images.unsplash.com/photo-1583877019925-1acc8293e43a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3900&q=80',
                       size: 'large',
                       id: 5,
                       linkUrl: 'shop/mens'
@@ -47,8 +47,8 @@ class Directory extends React.Component {
     render() {
         return (
             <div className='directory-menu'>
-            {this.state.sections.map(({id, title, imageUrl, size}) => (
-                <MenuItem key={id} title={title} imageUrl={imageUrl} size={size}/>
+            {this.state.sections.map(({id, ...otherSectionProps}) => (
+                <MenuItem key={id} {...otherSectionProps}/>
             ))}
             </div>
         )
