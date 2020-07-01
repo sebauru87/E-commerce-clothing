@@ -1,3 +1,3 @@
-E-commerce clothing app 
+E-commerce clothing app - present ----- still working and updating
 
 Frontend - React
