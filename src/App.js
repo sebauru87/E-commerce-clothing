@@ -7,9 +7,31 @@ import HomePage from './pages/homepage/homepage.component';
 import ShopPage from './pages/shop/shop.component';
 import Header from './components/header/header.component';
 import SignInAndSignOut from './components/signin-and-signout/signin-and-signout.component';
+import { auth } from './firebase/firebase.utils';
 
 
-function App() {
+class App extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      currentUser: null
+    }
+  }
+
+  unsubscribeFromAuth = null;
+
+  componentDidMount() {
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
+      this.setState({currentUser: user});
+    })
+  }
+
+  componentWillUnmount() {
+    this.unsubscribeFromAuth();
+  }
+
+  render() {
   return (
     <div>
       <Header />
@@ -20,6 +42,7 @@ function App() {
       </Switch>
     </div>
   );
+  }
 }
 
 export default App;
